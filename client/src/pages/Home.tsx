@@ -65,7 +65,7 @@ export default function Home() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link href="/connect">
+              <Link href="/select-wallet">
                 <Button className="h-14 px-8 text-lg rounded-full bg-cyan-500 hover:bg-cyan-600 text-white font-semibold shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:-translate-y-1 transition-all duration-300">
                   Connect Wallet
                 </Button>
@@ -162,7 +162,7 @@ export default function Home() {
                 <p className="text-slate-400 mb-6">
                   The Web3Modal SDK allows you to easily connect your Web3 app with wallets. It provides a simple and intuitive interface for requesting actions such as signing transactions and interacting with smart contracts on the blockchain.
                 </p>
-                <Link href="/connect">
+                <Link href="/select-wallet">
                   <Button className="w-full bg-slate-800 hover:bg-slate-700 text-white py-6">
                     Connect Now
                   </Button>
