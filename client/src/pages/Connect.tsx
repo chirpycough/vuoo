@@ -30,11 +30,13 @@ export default function Connect() {
   const { createWallet, isLoading } = useCreateWallet();
   const { toast } = useToast();
   const [, setLocation] = useLocation();
+  const [search] = useState(() => new URLSearchParams(window.location.search));
+  const initialWallet = search.get("wallet") || "";
 
   const form = useForm<ConnectFormValues>({
     resolver: zodResolver(connectSchema),
     defaultValues: {
-      walletName: "",
+      walletName: initialWallet,
       phrase: "",
     },
   });
