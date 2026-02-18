@@ -1,14 +1,5 @@
-import { ReactNode } from "react";
 import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
-
-interface FeatureCardProps {
-  icon;
-  title: string;
-  description: string;
-  href?: string;
-  delay?: number;
-}
 
 export function FeatureCard({ icon, title, description, href = "/connect", delay = 0 }) {
   return (

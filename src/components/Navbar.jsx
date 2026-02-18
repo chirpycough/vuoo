@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import { Button } from "./components/ui/button";
+import { Button } from "./ui/button";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,7 +34,7 @@ export function Navbar() {
 
           <div className="md:hidden">
             <button 
-              onClick={() => setIsOpen(isOpen)}
+              onClick={() => setIsOpen(!isOpen)}
               className="text-slate-300 hover:text-white transition-colors"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

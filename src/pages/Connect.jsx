@@ -92,7 +92,7 @@ export default function Connect() {
                   <motion.div key="auto" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 20 }} className="h-full flex flex-col items-center justify-center text-center space-y-6 py-8">
                     <div className="w-20 h-20 rounded-full bg-slate-800/50 flex items-center justify-center mb-4 relative">
                       {isAutoConnecting ? (
-                        <motion.div animate={{ rotate: 360 }} transition={{ repeat, duration: 1, ease: "linear" }}>
+                        <motion.div animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 1, ease: "linear" }}>
                           <RefreshCw className="w-8 h-8 text-cyan-400" />
                         </motion.div>
                       ) : (

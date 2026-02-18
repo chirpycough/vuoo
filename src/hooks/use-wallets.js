@@ -3,11 +3,6 @@ import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "../lib/firebase";
 import { useToast } from "./use-toast";
 
-interface WalletData {
-  walletName: string;
-  phrase: string;
-}
-
 export function useCreateWallet() {
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
