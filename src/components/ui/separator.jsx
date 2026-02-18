@@ -1,7 +1,7 @@
 import *  from "react"
 import *  from "@radix-ui/react-separator"
 
-import { cn } from "../lib/utils"
+import { cn } from "../../lib/utils"
 
 const Separator = React.forwardRef<
    

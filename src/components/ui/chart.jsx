@@ -3,7 +3,7 @@
 import *  from "react"
 import *  from "recharts"
 
-import { cn } from "../lib/utils"
+import { cn } from "../../lib/utils"
 
 // Format: { THEME_NAME_SELECTOR }
 const THEMES = { light: "", dark: ".dark" }
