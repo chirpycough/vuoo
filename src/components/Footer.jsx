@@ -12,7 +12,7 @@ export function Footer() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <span className="text-xl font-bold font-display text-white">Syncnode</span>
+              <span className="text-xl font-bold font-display text-white"></span>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed">
               Open and Decentralized Protocol for Syncing Various Wallets to Dapps. Secure, fast, and reliable.
