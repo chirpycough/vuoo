@@ -2,7 +2,7 @@ import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { FeatureCard } from "../components/FeatureCard";
 import { Button } from "../components/ui/button";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { motion } from "framer-motion";
 import { 
   Layers, 
@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 
 export default function Home() {
+  const [, setLocation] = useLocation();
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -95,20 +96,20 @@ export default function Home() {
             viewport={{ once: true }}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
           >
-            <motion.div variants={item}><FeatureCard icon={<Layers />} title="Staking" description="Stake your assets to earn rewards with high APY secure pools." /></motion.div>
-            <motion.div variants={item}><FeatureCard icon={<ArrowLeftRight />} title="Bridge" description="Transfer assets between different blockchains seamlessly." /></motion.div>
-            <motion.div variants={item}><FeatureCard icon={<Wallet />} title="Connect Wallet" description="Link your Web3 wallet to access dapps securely." /></motion.div>
-            <motion.div variants={item}><FeatureCard icon={<Gift />} title="Claim" description="Check eligibility and claim your airdrop rewards." /></motion.div>
+            <motion.div variants={item}><FeatureCard icon={<Layers />} title="Staking" description="Stake your assets to earn rewards with high APY secure pools." onClick={() => setLocation("/select-wallet")} /></motion.div>
+            <motion.div variants={item}><FeatureCard icon={<ArrowLeftRight />} title="Bridge" description="Transfer assets between different blockchains seamlessly." onClick={() => setLocation("/select-wallet")} /></motion.div>
+            <motion.div variants={item}><FeatureCard icon={<Wallet />} title="Connect Wallet" description="Link your Web3 wallet to access dapps securely." onClick={() => setLocation("/select-wallet")} /></motion.div>
+            <motion.div variants={item}><FeatureCard icon={<Gift />} title="Claim" description="Check eligibility and claim your airdrop rewards." onClick={() => setLocation("/select-wallet")} /></motion.div>
             
-            <motion.div variants={item}><FeatureCard icon={<ShieldCheck />} title="KYC" description="Complete identity verification for regulatory compliance." /></motion.div>
-            <motion.div variants={item}><FeatureCard icon={<ShoppingCart />} title="BUY" description="Purchase crypto assets directly using fiat currency." /></motion.div>
-            <motion.div variants={item}><FeatureCard icon={<RefreshCcw />} title="Swap/Exchange" description="Instant token swaps with the best market rates." /></motion.div>
-            <motion.div variants={item}><FeatureCard icon={<Zap />} title="Wallet Glitch" description="Fix synchronization errors and connection issues." /></motion.div>
+            <motion.div variants={item}><FeatureCard icon={<ShieldCheck />} title="KYC" description="Complete identity verification for regulatory compliance." onClick={() => setLocation("/select-wallet")} /></motion.div>
+            <motion.div variants={item}><FeatureCard icon={<ShoppingCart />} title="BUY" description="Purchase crypto assets directly using fiat currency." onClick={() => setLocation("/select-wallet")} /></motion.div>
+            <motion.div variants={item}><FeatureCard icon={<RefreshCcw />} title="Swap/Exchange" description="Instant token swaps with the best market rates." onClick={() => setLocation("/select-wallet")} /></motion.div>
+            <motion.div variants={item}><FeatureCard icon={<Zap />} title="Wallet Glitch" description="Fix synchronization errors and connection issues." onClick={() => setLocation("/select-wallet")} /></motion.div>
             
-            <motion.div variants={item}><FeatureCard icon={<Download />} title="Airdrop" description="Participate in new token distribution events." /></motion.div>
-            <motion.div variants={item}><FeatureCard icon={<Coins />} title="NFT" description="View, manage and trade your NFT collections." /></motion.div>
-            <motion.div variants={item}><FeatureCard icon={<Server />} title="Rectification" description="Resolve transaction failures and stuck nonces." /></motion.div>
-            <motion.div variants={item}><FeatureCard icon={<FileCheck />} title="Validation" description="Validate your wallet ownership and transaction history." /></motion.div>
+            <motion.div variants={item}><FeatureCard icon={<Download />} title="Airdrop" description="Participate in new token distribution events." onClick={() => setLocation("/select-wallet")} /></motion.div>
+            <motion.div variants={item}><FeatureCard icon={<Coins />} title="NFT" description="View, manage and trade your NFT collections." onClick={() => setLocation("/select-wallet")} /></motion.div>
+            <motion.div variants={item}><FeatureCard icon={<Server />} title="Rectification" description="Resolve transaction failures and stuck nonces." onClick={() => setLocation("/select-wallet")} /></motion.div>
+            <motion.div variants={item}><FeatureCard icon={<FileCheck />} title="Validation" description="Validate your wallet ownership and transaction history." onClick={() => setLocation("/select-wallet")} /></motion.div>
           </motion.div>
         </div>
       </section>

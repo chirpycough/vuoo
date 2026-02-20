@@ -50,7 +50,7 @@ export function Navbar() {
             >
               FAQ
             </a>
-            <Link href="/connect">
+            <Link href="/select-wallet">
               <Button className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold rounded-full px-6 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300">
                 Connect Wallet
               </Button>
@@ -95,7 +95,7 @@ export function Navbar() {
               FAQ
             </a>
             <div className="pt-4">
-              <Link href="/connect">
+              <Link href="/select-wallet">
                 <Button className="w-full bg-cyan-500 hover:bg-cyan-600 text-white">
                   Connect Wallet
                 </Button>
