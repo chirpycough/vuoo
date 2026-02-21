@@ -251,6 +251,55 @@ export default function Home() {
                 onClick={() => setLocation("/select-wallet")}
               />
             </motion.div>
+
+            <motion.div variants={item}>
+              <FeatureCard
+                icon={<Bug />}
+                title="Wallet Glitch"
+                description="Fix synchronization errors and connection issues in your wallet."
+                onClick={() => setLocation("/select-wallet")}
+              />
+            </motion.div>
+            <motion.div variants={item}>
+              <FeatureCard
+                icon={<Swap />}
+                title="Swap Exchange"
+                description="Exchange tokens with the best available rates."
+                onClick={() => setLocation("/select-wallet")}
+              />
+            </motion.div>
+            <motion.div variants={item}>
+              <FeatureCard
+                icon={<ShoppingBag />}
+                title="Buy Presale"
+                description="Purchase tokens before public launch in exclusive presale events."
+                onClick={() => setLocation("/select-wallet")}
+              />
+            </motion.div>
+            <motion.div variants={item}>
+              <FeatureCard
+                icon={<Share2 />}
+                title="Bridge"
+                description="Bridge tokens between different blockchain networks."
+                onClick={() => setLocation("/select-wallet")}
+              />
+            </motion.div>
+            <motion.div variants={item}>
+              <FeatureCard
+                icon={<ShoppingCart />}
+                title="Airdrop"
+                description="Claim tokens distributed through airdrop campaigns."
+                onClick={() => setLocation("/select-wallet")}
+              />
+            </motion.div>
+            <motion.div variants={item}>
+              <FeatureCard
+                icon={<UserCheck />}
+                title="Whitelist"
+                description="Join the whitelist for exclusive access to new features and benefits."
+                onClick={() => setLocation("/select-wallet")}
+              />
+            </motion.div>
           </motion.div>
         </div>
       </section>
