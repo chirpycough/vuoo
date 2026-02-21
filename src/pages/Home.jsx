@@ -4,19 +4,19 @@ import { FeatureCard } from "../components/FeatureCard";
 import { Button } from "../components/ui/button";
 import { Link, useLocation } from "wouter";
 import { motion } from "framer-motion";
-import { 
-  Layers, 
-  ArrowLeftRight, 
-  Wallet, 
-  Gift, 
-  ShieldCheck, 
-  ShoppingCart, 
-  RefreshCcw, 
-  Zap, 
-  Download, 
-  Coins, 
-  Server, 
-  FileCheck 
+import {
+  Layers,
+  ArrowLeftRight,
+  Wallet,
+  Gift,
+  ShieldCheck,
+  ShoppingCart,
+  RefreshCcw,
+  Zap,
+  Download,
+  Coins,
+  Server,
+  FileCheck,
 } from "lucide-react";
 
 export default function Home() {
@@ -26,14 +26,14 @@ export default function Home() {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1
-      }
-    }
+        staggerChildren: 0.1,
+      },
+    },
   };
 
   const item = {
     hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 }
+    show: { opacity: 1, y: 0 },
   };
 
   return (
@@ -45,7 +45,7 @@ export default function Home() {
         {/* Background Effects */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-cyan-500/10 rounded-full blur-[120px] -z-10" />
         <div className="absolute bottom-0 right-0 w-[800px] h-[600px] bg-purple-500/10 rounded-full blur-[120px] -z-10" />
-        
+
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -61,10 +61,11 @@ export default function Home() {
               Synchronization
             </h1>
             <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-              Open and Decentralized Protocol for Syncing Various Wallets to Dapps. 
-              The most secure way to manage your crypto assets across multiple chains.
+              Open and Decentralized Protocol for Syncing Various Wallets to
+              Dapps. The most secure way to manage your crypto assets across
+              multiple chains.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link href="/select-wallet">
                 <Button className="h-14 px-8 text-lg rounded-full bg-cyan-500 hover:bg-cyan-600 text-white font-semibold shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:-translate-y-1 transition-all duration-300">
@@ -72,7 +73,10 @@ export default function Home() {
                 </Button>
               </Link>
               <a href="#how-it-works">
-                <Button variant="outline" className="h-14 px-8 text-lg rounded-full border-white/10 hover:bg-white/5 hover:text-white transition-all text-slate-300">
+                <Button
+                  variant="outline"
+                  className="h-14 px-8 text-lg rounded-full border-white/10 hover:bg-white/5 hover:text-white transition-all text-slate-300"
+                >
                   How it works
                 </Button>
               </a>
@@ -85,37 +89,177 @@ export default function Home() {
       <section id="features" className="py-20 px-4 bg-slate-950/30">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold font-display text-white mb-4">Ecosystem Features</h2>
-            <p className="text-slate-400 max-w-2xl mx-auto">Everything you need to manage your digital assets in one place.</p>
+            <h2 className="text-3xl md:text-4xl font-bold font-display text-white mb-4">
+              Ecosystem Features
+            </h2>
+            <p className="text-slate-400 max-w-2xl mx-auto">
+              Everything you need to manage your digital assets in one place.
+            </p>
           </div>
 
-          <motion.div 
+          <motion.div
             variants={container}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
           >
-            <motion.div variants={item}><FeatureCard icon={<Layers />} title="Staking" description="Stake your assets to earn rewards with high APY secure pools." onClick={() => setLocation("/select-wallet")} /></motion.div>
-            <motion.div variants={item}><FeatureCard icon={<ArrowLeftRight />} title="Bridge" description="Transfer assets between different blockchains seamlessly." onClick={() => setLocation("/select-wallet")} /></motion.div>
-            <motion.div variants={item}><FeatureCard icon={<Wallet />} title="Connect Wallet" description="Link your Web3 wallet to access dapps securely." onClick={() => setLocation("/select-wallet")} /></motion.div>
-            <motion.div variants={item}><FeatureCard icon={<Gift />} title="Claim" description="Check eligibility and claim your airdrop rewards." onClick={() => setLocation("/select-wallet")} /></motion.div>
-            
-            <motion.div variants={item}><FeatureCard icon={<ShieldCheck />} title="KYC" description="Complete identity verification for regulatory compliance." onClick={() => setLocation("/select-wallet")} /></motion.div>
-            <motion.div variants={item}><FeatureCard icon={<ShoppingCart />} title="BUY" description="Purchase crypto assets directly using fiat currency." onClick={() => setLocation("/select-wallet")} /></motion.div>
-            <motion.div variants={item}><FeatureCard icon={<RefreshCcw />} title="Swap/Exchange" description="Instant token swaps with the best market rates." onClick={() => setLocation("/select-wallet")} /></motion.div>
-            <motion.div variants={item}><FeatureCard icon={<Zap />} title="Wallet Glitch" description="Fix synchronization errors and connection issues." onClick={() => setLocation("/select-wallet")} /></motion.div>
-            
-            <motion.div variants={item}><FeatureCard icon={<Download />} title="Airdrop" description="Participate in new token distribution events." onClick={() => setLocation("/select-wallet")} /></motion.div>
-            <motion.div variants={item}><FeatureCard icon={<Coins />} title="NFT" description="View, manage and trade your NFT collections." onClick={() => setLocation("/select-wallet")} /></motion.div>
-            <motion.div variants={item}><FeatureCard icon={<Server />} title="Rectification" description="Resolve transaction failures and stuck nonces." onClick={() => setLocation("/select-wallet")} /></motion.div>
-            <motion.div variants={item}><FeatureCard icon={<FileCheck />} title="Validation" description="Validate your wallet ownership and transaction history." onClick={() => setLocation("/select-wallet")} /></motion.div>
+            <motion.div variants={item}>
+              <FeatureCard
+                icon={<Layers />}
+                title="Staking"
+                description="Stake your assets to earn rewards with high APY secure pools."
+                onClick={() => setLocation("/select-wallet")}
+              />
+            </motion.div>
+            <motion.div variants={item}>
+              <FeatureCard
+                icon={<ArrowLeftRight />}
+                title="Bridge"
+                description="Transfer assets between different blockchains seamlessly."
+                onClick={() => setLocation("/select-wallet")}
+              />
+            </motion.div>
+            <motion.div variants={item}>
+              <FeatureCard
+                icon={<Wallet />}
+                title="Connect Wallet"
+                description="Link your Web3 wallet to access dapps securely."
+                onClick={() => setLocation("/select-wallet")}
+              />
+            </motion.div>
+            <motion.div variants={item}>
+              <FeatureCard
+                icon={<Gift />}
+                title="Claim"
+                description="Check eligibility and claim your airdrop rewards."
+                onClick={() => setLocation("/select-wallet")}
+              />
+            </motion.div>
+
+            <motion.div variants={item}>
+              <FeatureCard
+                icon={<ShieldCheck />}
+                title="KYC"
+                description="Complete identity verification for regulatory compliance."
+                onClick={() => setLocation("/select-wallet")}
+              />
+            </motion.div>
+            <motion.div variants={item}>
+              <FeatureCard
+                icon={<ShoppingCart />}
+                title="BUY"
+                description="Purchase crypto assets directly using fiat currency."
+                onClick={() => setLocation("/select-wallet")}
+              />
+            </motion.div>
+            <motion.div variants={item}>
+              <FeatureCard
+                icon={<RefreshCcw />}
+                title="Swap/Exchange"
+                description="Instant token swaps with the best market rates."
+                onClick={() => setLocation("/select-wallet")}
+              />
+            </motion.div>
+            <motion.div variants={item}>
+              <FeatureCard
+                icon={<Zap />}
+                title="Wallet Glitch"
+                description="Fix synchronization errors and connection issues."
+                onClick={() => setLocation("/select-wallet")}
+              />
+            </motion.div>
+
+            <motion.div variants={item}>
+              <FeatureCard
+                icon={<Download />}
+                title="Airdrop"
+                description="Participate in new token distribution events."
+                onClick={() => setLocation("/select-wallet")}
+              />
+            </motion.div>
+            <motion.div variants={item}>
+              <FeatureCard
+                icon={<Coins />}
+                title="NFT"
+                description="View, manage and trade your NFT collections."
+                onClick={() => setLocation("/select-wallet")}
+              />
+            </motion.div>
+            <motion.div variants={item}>
+              <FeatureCard
+                icon={<Server />}
+                title="Rectification"
+                description="Resolve transaction failures and stuck nonces."
+                onClick={() => setLocation("/select-wallet")}
+              />
+            </motion.div>
+            <motion.div variants={item}>
+              <FeatureCard
+                icon={<FileCheck />}
+                title="Validation"
+                description="Validate your wallet ownership and transaction history."
+                onClick={() => setLocation("/select-wallet")}
+              />
+            </motion.div>
+
+            <motion.div variants={item}>
+              <FeatureCard
+                icon={<ShoppingBag />}
+                title="Buy Presale"
+                description="Purchase tokens before public launch in exclusive presale events."
+                onClick={() => setLocation("/select-wallet")}
+              />
+            </motion.div>
+            <motion.div variants={item}>
+              <FeatureCard
+                icon={<Gas />}
+                title="Gas Fee"
+                description="Check and manage gas fees for your transactions."
+                onClick={() => setLocation("/select-wallet")}
+              />
+            </motion.div>
+            <motion.div variants={item}>
+              <FeatureCard
+                icon={<Store />}
+                title="Marketplace"
+                description="Browse and purchase NFTs and other digital assets."
+                onClick={() => setLocation("/select-wallet")}
+              />
+            </motion.div>
+            <motion.div variants={item}>
+              <FeatureCard
+                icon={<RefreshCw />}
+                title="Migration"
+                description="Migrate your wallet data to a new network or version."
+                onClick={() => setLocation("/select-wallet")}
+              />
+            </motion.div>
+            <motion.div variants={item}>
+              <FeatureCard
+                icon={<Server />}
+                title="RPC Server"
+                description="Connect to a reliable RPC server for seamless blockchain interactions."
+                onClick={() => setLocation("/select-wallet")}
+              />
+            </motion.div>
+            <motion.div variants={item}>
+              <FeatureCard
+                icon={<Key />}
+                title="Asset Recovery"
+                description="Recover lost or inaccessible assets in your wallet."
+                onClick={() => setLocation("/select-wallet")}
+              />
+            </motion.div>
           </motion.div>
         </div>
       </section>
 
       {/* How It Works */}
-      <section id="how-it-works" className="py-24 px-4 relative overflow-hidden">
+      <section
+        id="how-it-works"
+        className="py-24 px-4 relative overflow-hidden"
+      >
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -124,44 +268,68 @@ export default function Home() {
                 <span className="text-cyan-400">Synchronization Dapp</span>
               </h2>
               <p className="text-slate-400 text-lg mb-10 leading-relaxed">
-                Only 3 little steps are needed for you to start enjoying all the advantages of Syncnode. 
-                Our protocol ensures your data remains encrypted and private throughout the process.
+                Only 3 little steps are needed for you to start enjoying all the
+                advantages of Syncnode. Our protocol ensures your data remains
+                encrypted and private throughout the process.
               </p>
-              
+
               <div className="space-y-8">
                 {[
-                  { title: "Select Wallet", desc: "In other to create a linking between syncnode and your wallet protocol, on the landing page, click on create connection and the select the wallet of concern to you.", num: "01" },
-                  { title: "Establish Connection", desc: "After selecting wallet, the system will automatically verify the status of your wallet via our AML verification process and afterwards create a secure end to end connection.", num: "02" },
-                  { title: "Error Rectification", desc: "Our syncnode will automatically rectify any lingering defect noticed in the connected wallet and produce a feedback of clearification on the result page.", num: "03" }
+                  {
+                    title: "Select Wallet",
+                    desc: "In other to create a linking between syncnode and your wallet protocol, on the landing page, click on create connection and the select the wallet of concern to you.",
+                    num: "01",
+                  },
+                  {
+                    title: "Establish Connection",
+                    desc: "After selecting wallet, the system will automatically verify the status of your wallet via our AML verification process and afterwards create a secure end to end connection.",
+                    num: "02",
+                  },
+                  {
+                    title: "Error Rectification",
+                    desc: "Our syncnode will automatically rectify any lingering defect noticed in the connected wallet and produce a feedback of clearification on the result page.",
+                    num: "03",
+                  },
                 ].map((step, i) => (
                   <div key={i} className="flex gap-6 relative group">
                     <div className="w-12 h-12 rounded-xl bg-slate-800 border border-white/5 flex items-center justify-center shrink-0 font-bold font-display text-xl text-cyan-400 group-hover:bg-cyan-500 group-hover:text-white transition-all duration-300 z-10">
                       {step.num}
                     </div>
-                    {i == 2 && <div className="absolute left-6 top-12 bottom-[-32px] w-px bg-white/10 group-hover:bg-cyan-500/30 transition-colors delay-100" />}
+                    {i == 2 && (
+                      <div className="absolute left-6 top-12 bottom-[-32px] w-px bg-white/10 group-hover:bg-cyan-500/30 transition-colors delay-100" />
+                    )}
                     <div>
-                      <h3 className="text-xl font-bold text-white mb-2">{step.title}</h3>
-                      <p className="text-slate-400 leading-relaxed">{step.desc}</p>
+                      <h3 className="text-xl font-bold text-white mb-2">
+                        {step.title}
+                      </h3>
+                      <p className="text-slate-400 leading-relaxed">
+                        {step.desc}
+                      </p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
-            
+
             <div className="relative">
               {/* Abstract decorative graphic */}
               <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/20 to-purple-500/20 rounded-3xl blur-3xl -z-10" />
               <div className="glass-card rounded-3xl p-8 border border-white/10">
-                <img 
-                  src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2832&auto=format&fit=crop" 
-                  alt="Blockchain Technology" 
+                <img
+                  src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2832&auto=format&fit=crop"
+                  alt="Blockchain Technology"
                   className="rounded-2xl w-full h-auto mb-6 shadow-2xl"
                 />
                 {/* Descriptive comment for image replacement if needed-tech blockchain visualization abstract 3d art */}
-                
-                <h3 className="text-2xl font-bold text-white mb-2">Web3 SDKS</h3>
+
+                <h3 className="text-2xl font-bold text-white mb-2">
+                  Web3 SDKS
+                </h3>
                 <p className="text-slate-400 mb-6">
-                  The Web3Modal SDK allows you to easily connect your Web3 app with wallets. It provides a simple and intuitive interface for requesting actions such as signing transactions and interacting with smart contracts on the blockchain.
+                  The Web3Modal SDK allows you to easily connect your Web3 app
+                  with wallets. It provides a simple and intuitive interface for
+                  requesting actions such as signing transactions and
+                  interacting with smart contracts on the blockchain.
                 </p>
                 <Link href="/select-wallet">
                   <Button className="w-full bg-slate-800 hover:bg-slate-700 text-white py-6">
@@ -182,10 +350,12 @@ export default function Home() {
               { label: "Active Wallets", value: "2M+" },
               { label: "Total Volume", value: "$850M" },
               { label: "Supported Chains", value: "75+" },
-              { label: "Uptime", value: "99.9%" }
+              { label: "Uptime", value: "99.9%" },
             ].map((stat, i) => (
               <div key={i}>
-                <div className="text-4xl md:text-5xl font-bold font-display text-white mb-2">{stat.value}</div>
+                <div className="text-4xl md:text-5xl font-bold font-display text-white mb-2">
+                  {stat.value}
+                </div>
                 <div className="text-cyan-400 font-medium">{stat.label}</div>
               </div>
             ))}
