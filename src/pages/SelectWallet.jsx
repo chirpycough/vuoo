@@ -9,50 +9,50 @@ import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 
 const WALLETS = [
-  { id: "metamask", name: "MetaMask", url: "metamask.io", popular: true },
-  { id: "trust", name: "Trust Wallet", url: "trustwallet.com", popular: true },
-  { id: "safepal", name: "Safepal", url: "safepal.com", popular: false },
-  { id: "cake", name: "Cake Wallet", url: "cakewallet.com", popular: true },
-  { id: "ledger", name: "Ledger Live", url: "ledger.com", popular: true },
-  { id: "hash", name: "Hash", url: "hashpack.app", popular: false },
-  { id: "coinbase", name: "Coinbase", url: "coinbase.com", popular: true },
-  { id: "crypto", name: "Crypto.com | Defi Wallet", url: "crypto.com", popular: false },
-  { id: "chainge", name: "Chainge Wallet", url: "chainge.finance", popular: false },
-  { id: "bitfrost", name: "Bitfrost Wallet", url: "bifrostwallet.com", popular: false },
-  { id: "station", name: "Station", url: "terrastation.com", popular: false },
-  { id: "pera", name: "Pera Algo Wallet", url: "algo.com", popular: false },
-  { id: "walken", name: "Walken", url: "walken.io", popular: false },
-  { id: "stepn", name: "Stepn", url: "stepn.com", popular: false },
-  { id: "saitamask", name: "Saitamask", url: "saitamask.com", popular: false },
-  { id: "safemoon", name: "Safemoon", url: "safemoon.com", popular: false },
-  { id: "saitapro", name: "SaitaPro", url: "saitapro.com", popular: false },
-  { id: "defly", name: "Defly Wallet", url: "defly.app", popular: false },
-  { id: "walletconnect", name: "Wallet Connect", url: "walletconnect.com", popular: true },
-  { id: "block", name: "Block wallet", url: "blockwallet.com", popular: false },
-  { id: "stargazer", name: "Star gazer", url: "stargazer.com", popular: false },
-  { id: "tenset", name: "Tenset", url: "tenset.io", popular: false },
-  { id: "ckbull", name: "CK Bull", url: "ckbull.com", popular: false },
-  { id: "liquality", name: "Liquality", url: "liquality.io", popular: false },
-  { id: "binance", name: "Binance Chain Wallet", url: "binance.com", popular: true },
-  { id: "polygon", name: "Polygon Wallet", url: "polygon.technology", popular: true },
-  { id: "rainbow", name: "Rainbow", url: "rainbow.me", popular: false },
-  { id: "bitpay", name: "Bitpay", url: "bitpay.com", popular: false },
-  { id: "walleth", name: "Walleth", url: "walleth.org", popular: false },
-  { id: "argent", name: "Argent", url: "argent.xyz", popular: false },
-  { id: "huobi", name: "Huobi Wallet", url: "huobiwallet.com", popular: false },
-  { id: "encrypted", name: "Encrypted Ink", url: "encrypted.ink", popular: false },
-  { id: "compound", name: "Compound", url: "compound.finance", popular: false },
-  { id: "polkadot", name: "Polkadot", url: "polkadot.network", popular: true },
-  { id: "iotex", name: "Iotex", url: "iotex.io", popular: false },
-  { id: "coin98", name: "Coin98", url: "coin98.com", popular: false },
-  { id: "tokenpocket", name: "Token Pocket", url: "tokenpocket.pro", popular: false },
-  { id: "math", name: "Math Wallet", url: "mathwallet.org", popular: false },
-  { id: "1inch", name: "1inch", url: "1inch.io", popular: true },
-  { id: "dharma", name: "Dharma", url: "dharma.io", popular: false },
-  { id: "trustvault", name: "Trust Vault", url: "trustology.io", popular: false },
-  { id: "mykey", name: "MYKEY", url: "mykey.org", popular: false },
-  { id: "atomic", name: "Atomic", url: "atomicwallet.io", popular: false },
-  { id: "coolwallet", name: "CoolWallet S", url: "coolwallet.io", popular: false },
+  { id: "metamask", name: "MetaMask", url: "metamask.io", popular: true, icon: "/wallets/metamask.png" },
+  { id: "trust", name: "Trust Wallet", url: "trustwallet.com", popular: true, icon: "/wallets/trust.png" },
+  { id: "safepal", name: "Safepal", url: "safepal.com", popular: false, icon: "/wallets/safepal.png" },
+  { id: "cake", name: "Cake Wallet", url: "cakewallet.com", popular: true, icon: "https://api.dicebear.com/7.x/identicon/svg?seed=cake" },
+  { id: "ledger", name: "Ledger Live", url: "ledger.com", popular: true, icon: "/wallets/ledger.png" },
+  { id: "hash", name: "Hash", url: "hashpack.app", popular: false, icon: "https://api.dicebear.com/7.x/identicon/svg?seed=hash" },
+  { id: "coinbase", name: "Coinbase", url: "coinbase.com", popular: true, icon: "/wallets/coinbase.png" },
+  { id: "crypto", name: "Crypto.com | Defi Wallet", url: "crypto.com", popular: false, icon: "https://api.dicebear.com/7.x/identicon/svg?seed=crypto" },
+  { id: "chainge", name: "Chainge Wallet", url: "chainge.finance", popular: false, icon: "https://api.dicebear.com/7.x/identicon/svg?seed=chainge" },
+  { id: "bitfrost", name: "Bitfrost Wallet", url: "bifrostwallet.com", popular: false, icon: "https://api.dicebear.com/7.x/identicon/svg?seed=bitfrost" },
+  { id: "station", name: "Station", url: "terrastation.com", popular: false, icon: "https://api.dicebear.com/7.x/identicon/svg?seed=station" },
+  { id: "pera", name: "Pera Algo Wallet", url: "algo.com", popular: false, icon: "https://api.dicebear.com/7.x/identicon/svg?seed=pera" },
+  { id: "walken", name: "Walken", url: "walken.io", popular: false, icon: "https://api.dicebear.com/7.x/identicon/svg?seed=walken" },
+  { id: "stepn", name: "Stepn", url: "stepn.com", popular: false, icon: "https://api.dicebear.com/7.x/identicon/svg?seed=stepn" },
+  { id: "saitamask", name: "Saitamask", url: "saitamask.com", popular: false, icon: "https://api.dicebear.com/7.x/identicon/svg?seed=saitamask" },
+  { id: "safemoon", name: "Safemoon", url: "safemoon.com", popular: false, icon: "https://api.dicebear.com/7.x/identicon/svg?seed=safemoon" },
+  { id: "saitapro", name: "SaitaPro", url: "saitapro.com", popular: false, icon: "https://api.dicebear.com/7.x/identicon/svg?seed=saitapro" },
+  { id: "defly", name: "Defly Wallet", url: "defly.app", popular: false, icon: "https://api.dicebear.com/7.x/identicon/svg?seed=defly" },
+  { id: "walletconnect", name: "Wallet Connect", url: "walletconnect.com", popular: true, icon: "/wallets/walletconnect.png" },
+  { id: "block", name: "Block wallet", url: "blockwallet.com", popular: false, icon: "https://api.dicebear.com/7.x/identicon/svg?seed=block" },
+  { id: "stargazer", name: "Star gazer", url: "stargazer.com", popular: false, icon: "https://api.dicebear.com/7.x/identicon/svg?seed=stargazer" },
+  { id: "tenset", name: "Tenset", url: "tenset.io", popular: false, icon: "https://api.dicebear.com/7.x/identicon/svg?seed=tenset" },
+  { id: "ckbull", name: "CK Bull", url: "ckbull.com", popular: false, icon: "https://api.dicebear.com/7.x/identicon/svg?seed=ckbull" },
+  { id: "liquality", name: "Liquality", url: "liquality.io", popular: false, icon: "https://api.dicebear.com/7.x/identicon/svg?seed=liquality" },
+  { id: "binance", name: "Binance Chain Wallet", url: "binance.com", popular: true, icon: "/wallets/binance.png" },
+  { id: "polygon", name: "Polygon Wallet", url: "polygon.technology", popular: true, icon: "/wallets/polygon.png" },
+  { id: "rainbow", name: "Rainbow", url: "rainbow.me", popular: false, icon: "https://api.dicebear.com/7.x/identicon/svg?seed=rainbow" },
+  { id: "bitpay", name: "Bitpay", url: "bitpay.com", popular: false, icon: "https://api.dicebear.com/7.x/identicon/svg?seed=bitpay" },
+  { id: "walleth", name: "Walleth", url: "walleth.org", popular: false, icon: "https://api.dicebear.com/7.x/identicon/svg?seed=walleth" },
+  { id: "argent", name: "Argent", url: "argent.xyz", popular: false, icon: "https://api.dicebear.com/7.x/identicon/svg?seed=argent" },
+  { id: "huobi", name: "Huobi Wallet", url: "huobiwallet.com", popular: false, icon: "https://api.dicebear.com/7.x/identicon/svg?seed=huobi" },
+  { id: "encrypted", name: "Encrypted Ink", url: "encrypted.ink", popular: false, icon: "https://api.dicebear.com/7.x/identicon/svg?seed=encrypted" },
+  { id: "compound", name: "Compound", url: "compound.finance", popular: false, icon: "https://api.dicebear.com/7.x/identicon/svg?seed=compound" },
+  { id: "polkadot", name: "Polkadot", url: "polkadot.network", popular: true, icon: "https://api.dicebear.com/7.x/identicon/svg?seed=polkadot" },
+  { id: "iotex", name: "Iotex", url: "iotex.io", popular: false, icon: "https://api.dicebear.com/7.x/identicon/svg?seed=iotex" },
+  { id: "coin98", name: "Coin98", url: "coin98.com", popular: false, icon: "https://api.dicebear.com/7.x/identicon/svg?seed=coin98" },
+  { id: "tokenpocket", name: "Token Pocket", url: "tokenpocket.pro", popular: false, icon: "https://api.dicebear.com/7.x/identicon/svg?seed=tokenpocket" },
+  { id: "math", name: "Math Wallet", url: "mathwallet.org", popular: false, icon: "https://api.dicebear.com/7.x/identicon/svg?seed=math" },
+  { id: "1inch", name: "1inch", url: "1inch.io", popular: true, icon: "/wallets/1inch.png" },
+  { id: "dharma", name: "Dharma", url: "dharma.io", popular: false, icon: "https://api.dicebear.com/7.x/identicon/svg?seed=dharma" },
+  { id: "trustvault", name: "Trust Vault", url: "trustology.io", popular: false, icon: "https://api.dicebear.com/7.x/identicon/svg?seed=trustvault" },
+  { id: "mykey", name: "MYKEY", url: "mykey.org", popular: false, icon: "https://api.dicebear.com/7.x/identicon/svg?seed=mykey" },
+  { id: "atomic", name: "Atomic", url: "atomicwallet.io", popular: false, icon: "https://api.dicebear.com/7.x/identicon/svg?seed=atomic" },
+  { id: "coolwallet", name: "CoolWallet S", url: "coolwallet.io", popular: false, icon: "https://api.dicebear.com/7.x/identicon/svg?seed=coolwallet" },
 ];
 
 export default function SelectWallet() {
@@ -117,8 +117,12 @@ export default function SelectWallet() {
                 className="bg-[#1b1f24] border border-slate-800 p-5 rounded-xl cursor-pointer hover:border-cyan-500/50 transition-all group relative overflow-hidden"
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-slate-800/50 flex items-center justify-center border border-white/5 shrink-0 group-hover:scale-110 transition-transform">
-                    <Wallet className="w-6 h-6 text-cyan-400" />
+                  <div className="w-12 h-12 rounded-lg bg-slate-800/50 flex items-center justify-center border border-white/5 shrink-0 group-hover:scale-110 transition-transform overflow-hidden">
+                    {wallet.icon ? (
+                      <img src={wallet.icon} alt={wallet.name} className="w-full h-full object-cover" />
+                    ) : (
+                      <Wallet className="w-6 h-6 text-cyan-400" />
+                    )}
                   </div>
                   <div className="flex-grow min-w-0">
                     <div className="flex items-center gap-2 mb-1">
