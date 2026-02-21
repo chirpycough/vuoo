@@ -17,6 +17,15 @@ import {
   Coins,
   Server,
   FileCheck,
+  ShoppingBag,
+  Fuel,
+  Store,
+  RefreshCw,
+  Key,
+  Bug,
+  Repeat,
+  Share2,
+  UserCheck,
 } from "lucide-react";
 
 export default function Home() {
@@ -213,7 +222,7 @@ export default function Home() {
             </motion.div>
             <motion.div variants={item}>
               <FeatureCard
-                icon={<Gas />}
+                icon={<Fuel />}
                 title="Gas Fee"
                 description="Check and manage gas fees for your transactions."
                 onClick={() => setLocation("/select-wallet")}
@@ -262,7 +271,7 @@ export default function Home() {
             </motion.div>
             <motion.div variants={item}>
               <FeatureCard
-                icon={<Swap />}
+                icon={<Repeat />}
                 title="Swap Exchange"
                 description="Exchange tokens with the best available rates."
                 onClick={() => setLocation("/select-wallet")}

@@ -13,11 +13,7 @@ export default function config({ mode }) {
     server: {
       port: 5000,
       host: '0.0.0.0',
-      allowedHosts: [
-        'd850b104-010f-4063-b8bd-81a1ff1f17cb-00-2vtssejozqfch.spock.replit.dev',
-        '.replit.dev',
-        '.replit.app'
-      ]
+      allowedHosts: true
     },
   });
 }
